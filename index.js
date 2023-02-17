@@ -2,6 +2,9 @@ import express from 'express';
 const app = express();
 import cron from 'node-cron'
 import fetch from 'node-fetch'
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 app.get('/', (req, res) => {
     console.log("hi knk");
@@ -12,6 +15,8 @@ cron.schedule('* * * * *', async () => {
     console.log("ok")
 });
 
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
     console.log('listening on port 5000');
 })
