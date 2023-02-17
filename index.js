@@ -9,8 +9,8 @@ dotenv.config();
 app.get('/', (req, res) => {
     console.log("hi knk");
 })
-//0 */6
-cron.schedule('* * * * *', async () => {
+
+cron.schedule('0 */6 * * *', async () => {
     await fetch('https://airtransferlines.herokuapp.com/api/updateKur');
     console.log("ok")
 });
