@@ -6,9 +6,9 @@ import fetch from 'node-fetch'
 app.get('/', (req, res) => {
     console.log("hi knk");
 })
-
-cron.schedule('0 */6 * * *', async () => {
-    await fetch('http://localhost:3000/api/updateKur');
+//0 */6
+cron.schedule('* * * * *', async () => {
+    await fetch('https://airtransferlines.herokuapp.com/api/updateKur');
     console.log("ok")
 });
 
