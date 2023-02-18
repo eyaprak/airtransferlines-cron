@@ -11,9 +11,15 @@ app.get('/', (req, res) => {
     res.end('hi');
 })
 
+cron.schedule('0 */25 * * *', async () => {
+    await fetch('https://airtransferlines-cronserver.herokuapp.com/');
+    console.log("Server is up and running")
+});
+
+
 cron.schedule('0 */6 * * *', async () => {
     await fetch('https://airtransferlines.herokuapp.com/api/updateKur');
-    console.log("ok")
+    console.log("Data has been updated")
 });
 
 const PORT = process.env.PORT || 5000;
