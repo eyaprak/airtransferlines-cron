@@ -8,6 +8,7 @@ dotenv.config();
 
 app.get('/', (req, res) => {
     console.log("hi knk");
+    res.end('hi');
 })
 
 cron.schedule('0 */6 * * *', async () => {
