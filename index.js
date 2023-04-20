@@ -22,6 +22,11 @@ cron.schedule('0 */6 * * *', async () => {
     console.log("Data has been updated")
 });
 
+cron.schedule('*/2 * * * *', async () => {
+    await fetch('https://airtransferlines.herokuapp.com/api/removeUnpaidData');
+    console.log("Data has been deleted")
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
