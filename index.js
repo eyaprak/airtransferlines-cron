@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.end('hi');
 })
 //0 */30
-cron.schedule('*/15 * * * *', async () => {
+cron.schedule('0 * * * *', async () => {
     await fetch('https://airtransferlines-cronserver.herokuapp.com/');
     console.log("Server is up and running")
 });
