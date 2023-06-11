@@ -18,7 +18,7 @@ cron.schedule('0 * * * *', async () => {
 */
 
 cron.schedule('0 */6 * * *', async () => {
-    await fetch('https://airtransferlines.herokuapp.com/api/updateKur');
+    await fetch('https://airtransferlines.mezmop.com/api/updateKur');
     console.log("Data has been updated")
 });
 
